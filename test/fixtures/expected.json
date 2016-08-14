@@ -1,0 +1,27 @@
+{
+	"name": "foo",
+	"version": "1.0.0",
+	"description": "foo description.",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test.js"
+	},
+	"dependencies": {
+		"bar": "^1.0.0",
+		"corge": "0.1.0",
+		"qux": "~0.5.0"
+	},
+	"devDependencies": {
+		"bar": "^1.0.0",
+		"corge": "0.1.0",
+		"qux": "~0.5.0"
+	},
+	"keywords": [
+		"fred",
+		"grault",
+		"plugh",
+		"thud",
+		"xyzzy"
+	],
+	"foo": "bar"
+}

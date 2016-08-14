@@ -1,0 +1,40 @@
+{
+  "name": "sort-pkg",
+  "version": "0.0.0",
+  "description": "Sort package.json file fields.",
+  "main": "index.js",
+  "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/)",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint {index,test/**/*}.js && istanbul cover _mocha test/**/*.js && istanbul check-coverage"
+  },
+  "dependencies": {
+    "array-uniq": "^1.0.3",
+    "sort-keys": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-niksy": "^3.0.1",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "json",
+    "package",
+    "sort"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksy/sort-pkg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niksy/sort-pkg/issues"
+  },
+  "homepage": "https://github.com/niksy/sort-pkg#readme"
+}
