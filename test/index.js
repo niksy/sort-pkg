@@ -7,32 +7,39 @@ it('should properly sort unsorted array', function () {
 	var actual = fn({
 		main: 'index.js',
 		version: '1.0.0',
-		name: 'foo',
+		name: 'boomer',
 		scripts: {
 			test: 'node test.js'
 		},
-		keywords: [
-			'grault',
-			'plugh',
-			'grault',
-			'fred',
-			'thud',
-			'xyzzy',
-			'thud',
-			'xyzzy'
-		],
-		foo: 'bar',
-		devDependencies: {
-			qux: '~0.5.0',
-			bar: '^1.0.0',
-			corge: '0.1.0'
+		penny: 'hannah',
+		repository: {
+			type: 'git',
+			url: 'git://github.com/roxie/izzy.git'
 		},
-		description: 'foo description.',
+		keywords: [
+			'joey',
+			'kobe',
+			'joey',
+			'gunner',
+			'coco',
+			'buddy',
+			'coco',
+			'buddy'
+		],
+		misty: 'marley',
+		devDependencies: {
+			moose: '~0.5.0',
+			dixie: '^1.0.0',
+			loki: '0.1.0'
+		},
+		homepage: 'https://github.com/roxie/izzy',
+		description: 'boomer description.',
 		dependencies: {
-			qux: '~0.5.0',
-			bar: '^1.0.0',
-			corge: '0.1.0'
-		}
+			moose: '~0.5.0',
+			dixie: '^1.0.0',
+			loki: '0.1.0'
+		},
+		callie: 'luna'
 	});
 
 	assert.equal(JSON.stringify(actual), JSON.stringify(expected));

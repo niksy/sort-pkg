@@ -1,7 +1,12 @@
-var sortKeys = require('sort-keys');
-var uniq = require('array-uniq');
+'use strict';
 
-var DEFAULT_SORT_ORDER = [
+const sortKeys = require('sort-keys');
+const insert = require('array-insert');
+const uniq = require('lodash.uniq');
+const difference = require('lodash.difference');
+const flatten = require('lodash.flatten');
+
+const SORT_ORDER = [
 	'name',
 	'version',
 	'description',
@@ -38,26 +43,35 @@ var DEFAULT_SORT_ORDER = [
 /**
  * @param  {Object} pkg
  *
+ * @return {String[]}
+ */
+function prepareSortOrder ( pkg ) {
+	const index = SORT_ORDER.indexOf('repository');
+	const unknownKeys = difference(Object.keys(pkg), SORT_ORDER).sort();
+	return flatten(insert(SORT_ORDER, index, unknownKeys));
+}
+
+/**
+ * @param  {Object} pkg
+ *
  * @return {Object}
  */
-module.exports = function ( pkg ) {
+module.exports = ( pkg ) => {
 
-	var arr = DEFAULT_SORT_ORDER.reverse();
-	var newPkg;
-
-	newPkg = sortKeys(pkg, {
-		compare: function ( a, b ) {
-			return arr.indexOf(a) > arr.indexOf(b) ? -1 : 1;
+	const sortOrder = prepareSortOrder(pkg).reverse();
+	const newPkg = sortKeys(pkg, {
+		compare: ( a, b ) => {
+			return sortOrder.indexOf(a) > sortOrder.indexOf(b) ? -1 : 1;
 		}
 	});
 
-	['dependencies', 'devDependencies', 'scripts'].forEach(function ( prop ) {
+	['dependencies', 'devDependencies', 'scripts'].forEach(( prop ) => {
 		if ( prop in newPkg ) {
 			newPkg[prop] = sortKeys(newPkg[prop]);
 		}
 	});
 
-	['keywords'].forEach(function ( prop ) {
+	['keywords'].forEach(( prop ) => {
 		if ( prop in newPkg ) {
 			newPkg[prop] = uniq(newPkg[prop].sort());
 		}

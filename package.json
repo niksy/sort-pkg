@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sort package.json file fields.",
   "main": "index.js",
-  "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/)",
+  "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com)",
   "license": "MIT",
   "directories": {
     "test": "test"
@@ -12,7 +12,10 @@
     "test": "eslint {index,test/**/*}.js && istanbul cover _mocha test/**/*.js && istanbul check-coverage"
   },
   "dependencies": {
-    "array-uniq": "^1.0.3",
+    "array-insert": "^2.0.0",
+    "lodash.difference": "^4.5.0",
+    "lodash.flatten": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
     "sort-keys": "^1.1.2"
   },
   "devDependencies": {
