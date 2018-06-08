@@ -79,4 +79,4 @@ package.json data to sort.
 MIT © [Ivan Nikolić](http://ivannikolic.com)
 
 [ci]: https://travis-ci.org/niksy/sort-pkg
-[ci-img]: https://img.shields.io/travis/niksy/sort-pkg.svg
+[ci-img]: https://travis-ci.org/niksy/sort-pkg.svg?branch=master
