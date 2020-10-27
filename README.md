@@ -1,3 +1,11 @@
+![Deprecated project](https://img.shields.io/badge/status-deprecated-red.svg)
+
+**This project is deprecated.**
+
+Use [`sort-package-json`](https://github.com/keithamus/sort-package-json) instead.
+
+---
+
 # sort-pkg
 
 [![Build Status][ci-img]][ci]
